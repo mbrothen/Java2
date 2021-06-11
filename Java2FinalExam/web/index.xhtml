@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--Created By MATT BROTHEN 4-18-19-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Compute Tax</title>
+    </h:head>
+    <h:body>
+        <h1>Compute Tax</h1>
+        <h:form>
+           <h:panelGrid columns="2">
+                <h:outputLabel value="Income: "/>
+                <h:inputText id="taxableIncome" value="#{calculateTax.taxableIncome}"/>
+                <h:outputLabel value="Filing Status: " />
+                <h:selectOneMenu id="filingStatus" value="#{calculateTax.filingStatus}">
+                    <f:selectItem itemLabel ="Single" itemValue="0"/>
+                    <f:selectItem itemLabel ="Married jointly" itemValue="1"/>
+                    <f:selectItem itemLabel ="Married separately" itemValue="2"/>
+                    <f:selectItem itemLabel ="Head of household" itemValue="3"/>
+                </h:selectOneMenu>
+            </h:panelGrid>
+
+                <h:commandButton value="Compute Tax"/>
+                
+                <br/>
+            
+            <h:outputText escape="false" value="#{calculateTax.response}"/>
+            
+             
+        </h:form>
+        
+    </h:body>
+</html>
+
+ 

@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Staff Directory</title>
+    </h:head>
+    <h:body>
+        <h1>Staff Directory</h1>
+        <h:form>
+        <h:panelGrid columns="2">
+            <h:outputLabel value="ID Number:"/>
+            <h:inputText id="idNumberInputText" value="#{staffForm.idNumber}"/>
+        </h:panelGrid>
+        <h:panelGrid columns="6">
+            <h:outputLabel value="First Name"/>
+            <h:inputText id="firstNameInputText" value="#{staffForm.firstName}"/>
+            <h:outputLabel value="MI" />
+            <h:inputText id="miInputText" size="2" value="#{staffForm.mi}" />
+            <h:outputLabel value="Last Name" />
+            <h:inputText id="lastNameInputText" value="#{staffForm.lastName}"/>
+        </h:panelGrid>
+        <h:panelGrid columns ="2">
+            <h:outputLabel value="Address" />
+            <h:inputText id="addressInputText" size="16" value="#{staffForm.address}"/>
+        </h:panelGrid>
+        <h:panelGrid columns="4">
+            <h:outputLabel value="City"/>
+            <h:inputText id="cityInputText" value="#{staffForm.city}" />
+            <h:outputText value="State" />
+            <h:inputText id="stateInputText" size="2" value="#{staffForm.state}"/>
+        </h:panelGrid>
+        <h:panelGrid columns="2">
+            <h:outputLabel value="Phone" />
+            <h:inputText id="phoneInputText" value="#{staffForm.phone}"/>
+        </h:panelGrid>
+        <h:panelGrid columns="4">
+            <h:commandButton value="View" action="#{staffForm.view()}" />
+            <h:commandButton value="Insert" action="#{staffForm.insert()}"/>
+            <h:commandButton value="Update" action="#{staffForm.update()}"/>
+            <h:commandButton value="Clear" action ="#{staffForm.clear()}"/>
+        </h:panelGrid>
+        </h:form>
+        <h:outputText escape="false" style="color:red" value="#{staffForm.status}" />
+    </h:body>
+</html>
+
